@@ -102,8 +102,8 @@ From ssh://xxx/srv/git/xxx
  3036acc..9eb5e40  debian-release-20081030 -> origin/debian-release-20081030
 * [new branch]      debian-release-20081112 -> origin/debian-release-20081112
 * [new branch]      debian-release-20081112.1 -> origin/debian-release-20081112.1
- 3d619e7..6260626  master     -> origin/master
- 
+   3d619e7..6260626  master     -> origin/master
+
 We can see for branch 'debian-release-20081030' we have a local copy. The commit hash updated at remote from 3036acc(head of local) to 9eb5e40(head of remote). *[new branch] means we do not have
  a copy at local. 
 
@@ -137,3 +137,42 @@ git reset --hard
 Be careful with this command, there is not any way to re-do the changes. 
 
 If you just want to keep the changes while un-do the last commit, you should use soft reset instead. 
+
+
+Scenario V
+----
+
+Now, let's say you run 'git init' at a local folder and initialize a repository in your local folder. But you want to push to your github, then what should you do?
+
+
+Step 1: Create a repository which has the same name on github;
+
+
+Step 2: After successful creation, run following two commands in your local repository. Pay attention, before you run these commands, you should have set up the SSH setting. 
+
+```bash
+git remote add origin git@github.com:'userid'/'reponame'.git
+```
+
+```bash
+git push -u origin master
+```
+
+At here, origin is the alia of 'git@github.com:'userid'/'reponame'.git'. 
+
+
+Don't forget you must add '-u' which can set the track branch setting for your current branch. Only with such setting, you can run 'git pull' to update your local branch with your remote branch. 
+
+
+In other words, if you forget the use the '-u' then what should you do?
+
+
+You can use:
+
+```bash
+git branch --set-upstream-to=origin/master master
+```
+
+
+
+
