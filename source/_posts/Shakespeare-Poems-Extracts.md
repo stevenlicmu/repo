@@ -5,8 +5,7 @@ tags: Shakespeare
 categories: Poems
 ---
 
-Oct 15th
-----
+Poem I:
 
 Doubt thou the stars are fire,
 

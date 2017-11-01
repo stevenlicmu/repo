@@ -8,6 +8,9 @@ categories: Technique
 Today, we are going to talk about some useful commands in Git. Those commands will be introduced by scenarioes. 
 
 
+We should treat github as a tool and record something as a menu whenever you need it you can turn to. 
+
+
 Scenario I
 ----
 

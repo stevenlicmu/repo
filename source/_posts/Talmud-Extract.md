@@ -7,8 +7,8 @@ catergories: Reading_Notes
 
 I will write down something I felt interesting during my reading of 'Talmud'. 
 
-Oct 15th
-----
+Story I:
+
 
 Read a story about how to manage your month. 
 

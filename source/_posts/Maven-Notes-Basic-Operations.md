@@ -5,9 +5,6 @@ tags: Maven
 categories: Technique
 ---
 
-Let's talk about the famous command
-----
-
 Talking about maven, many people will think about the following command:
 
 ```bash
