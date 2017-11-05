@@ -97,6 +97,20 @@ Talking about wait and notify methods, we must understand the difference between
 
 Wait() will let the current thread enter a state of waiting for other threads notify it and <b>give up all the locks it has</b>. 
 
+```
+Thread.sleep(int ms)和Object.wait()的区别：
+
+对于thread类，有一个类成员方法是sleep(int ms)，让一个线程休眠（阻塞）一段时间，以ms为单位。但其不证明其休眠刚刚好是对应数字的时间，因为当对应的时间结束后，其进入了就绪状态，等待着JVM的调用。
+
+而对应Object.wait()的作用也是让调用它的线程进入休眠。其也可以指定一个时间让它醒过来，也可以不指定，通过别人线程调用notify()或者notifyAll()来唤醒它。但是就算指定一个时间，也能被notify()或者notifyAll()提前唤醒。
+
+那么两个休眠有什么不同呢？
+
+1）前者是没有意义的阻塞，纯粹就是让它安静一会；后者则是大多数为了等待另外一个线程准备好其要资源，再起来继续工作；
+2）所以，来到了最大的不同了：sleep的进程不会释放同步锁，所以，如果一个线程进入了一个同步方法或者一个同步代码块，在块内调用sleep()了，则在它休眠的时间内，其它的线程不同进入对象级别的同步的所有代码块或者方法。但是，调用wait()则不同了，线程会释放掉同步锁，让其它进程能进入其它的或者当前的对象级别的代码块或者方法内部继续执行。
+
+```
+
 3.3 Thead.join() 让一个线程等另外一个线程结束才运行
 -----
 
