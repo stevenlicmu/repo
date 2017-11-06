@@ -96,6 +96,20 @@ Generally, we can classify the locks into: mutex, semaphore, read/write lock and
 
 Also, we can classify them from following perspectives: 1) Share/Exclusive (read/write), 2) Reentrant Lock, 3) Fair/Unfair Lock, 4) Optimistic/Pessimistic Lock
 
+
+
+Regarding to two different ways of Thread creation in Java and explanation for race condition, please turn to  http://blog.csdn.net/firehotest/article/details/52835716
+
+
+
+Regarding to two different types of synchronized in Java and thread-safe classes discussion please turn to http://blog.csdn.net/firehotest/article/details/78453891
+
+
+
+Regarding to Java implementation of semaphore, read/write lock and reentrant lock(fair/unfair) usage please turn to: http://blog.csdn.net/firehotest/article/details/60455811
+
+
+
 3.2 Object.notify() and Object.wait() 让线程交替运行
 -----
 
